@@ -1,0 +1,10 @@
+{
+  "name": "http2coap",
+  "version": "0.0.1",
+  "description": "simplest http/coap gateway application",
+  "dependencies": {
+    "express": "~4.4.4",
+    "coap": "~0.7.0",
+    "coap-packet": "~0.1.11"
+  }
+}
