@@ -2,9 +2,14 @@
   "name": "http2coap",
   "version": "0.0.1",
   "description": "simplest http/coap gateway application",
+  "main": "index.js",
   "dependencies": {
     "express": "~4.4.4",
     "coap": "~0.7.0",
     "coap-packet": "~0.1.11"
   }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafaeldelucena/http2coap.git"
+  },
 }
