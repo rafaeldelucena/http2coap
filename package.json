@@ -6,10 +6,12 @@
   "dependencies": {
     "express": "~4.4.4",
     "coap": "~0.7.0",
-    "coap-packet": "~0.1.11"
-  }
+    "coap-packet": "~0.1.11",
+    "body-parser": "~1.4.3",
+    "method-override": "~2.0.2"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/rafaeldelucena/http2coap.git"
-  },
+  }
 }

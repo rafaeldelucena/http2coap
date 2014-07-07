@@ -71,6 +71,39 @@ app.get('/:address/:resource', function(req, res){
     coap_req.end();
 });
 
+function logErrors(err, req, res, next) {
+  console.error(err.stack);
+  next(err);
+}
+
+function clientErrorHandler(err, req, res, next) {
+  if (req.xhr) {
+    res.send(500, { error: 'Something blew up!' });
+  } else {
+    next(err);
+  }
+}
+
+function errorHandler(err, req, res, next) {
+  res.status(500);
+  res.render('error', { error: err });
+}
+
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
+
+app.use(logErrors);
+app.use(clientErrorHandler);
+app.use(errorHandler);
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+
+app.post('/configs', function(req, res) {
+    console.log(req.body);
+    res.send('ok configs!');
+});
+
 http.listen(3000, function(){
       console.log('listening on *:3000');
 });
